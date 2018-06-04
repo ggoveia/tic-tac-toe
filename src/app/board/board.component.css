@@ -1,0 +1,25 @@
+.board{
+  position: relative;
+  height:300px;
+  width: 300px;
+  margin: 0 auto;
+}
+.table-div{
+  position: absolute;
+  top:0%;
+}
+.table-board{
+  table-layout: fixed;
+  width: 300px;
+  height: 300px;
+  top: 0%px;
+  position: absolute;
+}
+
+.border-top {
+  border-top: 1px solid black;
+}
+
+.border-left {
+  border-left: 1px solid black;
+}
