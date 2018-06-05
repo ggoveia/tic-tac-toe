@@ -1,0 +1,23 @@
+.square {
+width: 98px;
+height: 98px;
+position:relative;
+}
+.xvalue:after {
+  position:absolute;
+    content:"\d7";
+    font-size:177px;
+    color:black;
+    font-weight:bold;
+    top:-55%;
+    left:-1%;
+}
+.ovalue:after {
+  position:absolute;
+  content:"\d20";
+  font-size:100px;
+  color:black;
+  font-weight:bold;
+  top:-26%;
+  left:8%;
+}

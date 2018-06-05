@@ -1,5 +1,5 @@
 export enum Value {
-  NoValue,
-  XValue,
-  OValue
+  noValue = 'novalue',
+  xValue  = 'xvalue',
+  oValue = 'ovalue'
 }
