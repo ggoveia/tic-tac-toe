@@ -16,6 +16,14 @@
   position: absolute;
 }
 
+.second > td, .third > td {
+  border-top: 1px solid black;
+}
+
+.center, .right {
+  border-left: 1px solid black;
+}
+
 .border-top {
   border-top: 1px solid black;
 }

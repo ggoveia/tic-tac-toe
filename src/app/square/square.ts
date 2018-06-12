@@ -1,11 +1,11 @@
 import { Value } from './value.enum';
 
 export class Square {
-  id: string;
   value: Value;
+  position: string;
 
-  constructor(squareId, squareValue) {
-    this.id = squareId;
+  constructor(squareValue, position) {
     this.value = squareValue;
+    this.position = position;
   }
 }

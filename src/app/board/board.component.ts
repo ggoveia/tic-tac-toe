@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Row } from './row';
+import { Board } from './board';
+import { GameService } from '../game.service';
+
 
 @Component({
   selector: 'app-board',
@@ -6,16 +10,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-
-  constructor() {
-
-   }
-
-  ngOnInit() {
-
+  board: Board;
+  constructor(private gameService: GameService) {
   }
 
-  receiveSquareUpdate(){
-
+  ngOnInit() {
+    this.board = this.gameService.getBoard();
   }
 }

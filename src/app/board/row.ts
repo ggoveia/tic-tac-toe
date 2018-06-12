@@ -1,11 +1,11 @@
 import { Square } from '../square/square';
 
 export class Row {
+  id: string;
   squares: Square[];
 
-  constructor(firstSquare, secondSquare, thirdSquare) {
-    this.squares.push(firstSquare);
-    this.squares.push(secondSquare);
-    this.squares.push(thirdSquare);
+  constructor(id: string, firstSquare: Square, secondSquare: Square, thirdSquare: Square) {
+    this.id = id;
+    this.squares =[firstSquare, secondSquare, thirdSquare];
   }
 }

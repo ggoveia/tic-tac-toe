@@ -8,11 +8,12 @@ export class Game {
     whoIsPlaying: Player;
 
     constructor( private gameService: GameService) {
-      this.board = new Board();
-      this.players = [new Player('Giuliane', 'X'), new Player('Junior', 'O')];
-    }
-    ngOnInit(): void {
-      this.whoIsPlaying = this.gameService.getFirstPlayer(this.players);
+     this.startNewGame();
     }
 
+    startNewGame() {
+      this.board = this.gameService.getBoard();
+      this.players = [new Player('Giuliane', 'X'), new Player('Junior', 'O')];
+      this.whoIsPlaying = this.gameService.getFirstPlayer(this.players);
+    }
 }
