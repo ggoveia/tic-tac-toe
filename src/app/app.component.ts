@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from './game';
 import { GameService } from './game.service';
+import { Observable } from 'rxjs';
+import { Board } from './board/board';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +10,13 @@ import { GameService } from './game.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  game: Game;
+  board: Board;
+  public game: Observable<Game>;
   title = 'TIC TAC TOE';
   constructor(private gameService: GameService) { }
 
   ngOnInit() {
-    this.game = new Game(this.gameService);
+    this.game = this.gameService.currentGame;
+    this.game.subscribe(g => this.board = g.board);
   }
 }

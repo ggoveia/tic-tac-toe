@@ -5,19 +5,27 @@ position:relative;
 }
 .xvalue:after {
   position:absolute;
-    content:"\d7";
-    font-size:177px;
-    color:black;
-    font-weight:bold;
-    top:-55%;
-    left:-1%;
+  content:"\d7";
+  font-size:177px;
+  font-weight:bold;
+  top:-55%;
+  left:-1%;
+  height: 1px;
+  width: 1px;
+  pointer-events: none;
 }
 .ovalue:after {
   position:absolute;
   content:"\d20";
   font-size:100px;
-  color:black;
   font-weight:bold;
   top:-26%;
   left:8%;
+  height: 1px;
+  width: 1px;
+  pointer-events: none;
+}
+
+.winner{
+  color:blue;
 }

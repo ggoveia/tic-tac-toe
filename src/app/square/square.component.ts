@@ -1,8 +1,9 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Value } from './value.enum';
 import { Square } from './square';
 import { Position } from './position.enum';
 import { GameService } from '../game.service';
+import { Row } from '../board/row';
 
 @Component({
   selector: 'app-square',
@@ -10,12 +11,13 @@ import { GameService } from '../game.service';
   styleUrls: ['./square.component.css']
 })
 export class SquareComponent implements OnInit {
-  square: Square = {
-    value: Value.noValue,
-    position: Position.left
-  };
+  @Input()
+  square: Square;
+  @Input()
+  rowId: string;
 
-  @Output() changedValue = new EventEmitter();
+  @Output()
+  changeSquare: EventEmitter<any> = new EventEmitter();
 
   constructor(private gameService: GameService) { }
 
@@ -23,6 +25,6 @@ export class SquareComponent implements OnInit {
   }
 
   onSelectSquare() {
-    this.square.value = Value.oValue;
+    this.gameService.changeSquareValueBasedOnPlayer(this.square);
   }
 }

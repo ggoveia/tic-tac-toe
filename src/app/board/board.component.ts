@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Row } from './row';
 import { Board } from './board';
 import { GameService } from '../game.service';
@@ -10,11 +10,13 @@ import { GameService } from '../game.service';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
+  @Input()
   board: Board;
+
   constructor(private gameService: GameService) {
   }
 
   ngOnInit() {
-    this.board = this.gameService.getBoard();
   }
+
 }

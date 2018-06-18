@@ -4,20 +4,25 @@
   width: 300px;
   margin: 0 auto;
 }
+
 .table-div{
   position: absolute;
   top:0%;
+  table-layout:initial;
 }
-.table-board{
-  table-layout: fixed;
+.table-board {
   width: 300px;
   height: 300px;
   top: 0%px;
-  position: absolute;
 }
 
 .second > td, .third > td {
+  width: 33%;
   border-top: 1px solid black;
+}
+
+.risk {
+  color: blue;
 }
 
 .center, .right {

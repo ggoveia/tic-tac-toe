@@ -1,9 +1,9 @@
 <div class="board">
    <div class="table-div">
       <table class = "table-board">
-        <tr *ngFor="let row of board.rows" class="{{ row.id }}">
+        <tr *ngFor="let row of board.rows" class="{{ row.id }} {{ row.risk }}">
            <td *ngFor="let s of row.squares" class="{{ s.position }}">
-               <app-square></app-square>
+               <app-square [square]="s" [rowId]="row.id" ></app-square>
             </td>
         </tr>
        </table>
