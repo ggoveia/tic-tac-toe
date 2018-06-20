@@ -69,11 +69,36 @@ export class GameService {
   }
 
   verifyVerticalResult(board: Board) {
-
+    const squareArray = [];
+  //  return this.haveSameValue(board.rows.forEach(r => squareArray.push(r.squares[0])));
   }
 
-  haveSameValue(valueList) {
-    return valueList.squares.every(s => s.value === Value.oValue) || valueList.squares.every(s => s.value === Value.xValue);
+  confirmVerticalValues(board: Board){    
+    for(let i = 0; i < 2; i++ ) {
+      let rowVerticalValues = [] ;
+      board.rows.forEach(
+        r => {          
+          rowVerticalValues.push(r.squares[i]);         
+        }
+      )
+      if(this.haveSameValue(rowVerticalValues))
+      {
+         this.game.subscribe(g => g.board.rows.filter(r => r.squares[i].winner == "vertical"));
+         return;
+      }
+    }
+  }
+
+  confirmHorizontalValues(board: Board){
+    board.rows.forEach(
+      r => {
+        
+      }
+    )
+  }
+
+  haveSameValue(squareList: Array<Square>) {
+    return squareList.every(s => s.value == Value.oValue) || squareList.every(s => s.value == Value.xValue);
   }
 
   diagonalHasSameValue(diagonalValues){
