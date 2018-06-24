@@ -1,12 +1,23 @@
-import { Square } from '../square/square';
-import { Value } from '../square/value.enum';
-import { Row } from './row';
-import { Position } from '../square/position.enum';
+import { Row, TicTacToeRow } from './row';
 
-export class Board {
+export interface Board {
+  rows: Row[];
+}
+
+export class TicTacToeBoard implements Board {
   rows: Row[];
 
-  constructor(definedRows: Row[]) {
-    this.rows = definedRows;
+  constructor() {
+    this.rows = this.getRows();
    }
+  static getNewBoard(): Board {
+   return new TicTacToeBoard();
+  }
+
+  getRows(): Row[] {
+    const first: Row = TicTacToeRow.getNewRow('first');
+    const second: Row = TicTacToeRow.getNewRow('second');
+    const third: Row = TicTacToeRow.getNewRow('third');
+    return [first, second, third];
+  }
 }

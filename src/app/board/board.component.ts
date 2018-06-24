@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Row } from './row';
 import { Board } from './board';
-import { GameService } from '../game.service';
+import { GameService } from '../shared/game.service';
 
 
 @Component({

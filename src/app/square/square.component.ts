@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Value } from './value.enum';
 import { Square } from './square';
 import { Position } from './position.enum';
-import { GameService } from '../game.service';
+import { GameService } from '../shared/game.service';
 import { Row } from '../board/row';
 
 @Component({

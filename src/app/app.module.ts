@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BoardComponent } from './board/board.component';
 import { SquareComponent } from './square/square.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
+import { ResultService } from './shared/result.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { ScoreboardComponent } from './scoreboard/scoreboard.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ResultService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
