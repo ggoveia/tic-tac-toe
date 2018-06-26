@@ -16,15 +16,13 @@ export class SquareComponent implements OnInit {
   @Input()
   rowId: string;
 
-  @Output()
-  changeSquare: EventEmitter<any> = new EventEmitter();
-
   constructor(private gameService: GameService) { }
 
   ngOnInit() {
   }
 
   onSelectSquare() {
+    if(this.square.value == Value.noValue)
     this.gameService.changeSquareValueBasedOnPlayer(this.square);
   }
 }
